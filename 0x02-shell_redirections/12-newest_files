@@ -1,0 +1,2 @@
+#!/bin/bash
+ls > file | sort -rn file | head -n 10 | cat
