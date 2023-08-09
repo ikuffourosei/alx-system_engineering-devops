@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c 1 | paste -s -d ''
+cut -f 1 | sort | uniq -c | sort -nr | head -n 11
