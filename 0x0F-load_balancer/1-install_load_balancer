@@ -21,12 +21,12 @@ frontend http
 
 backend web-backend
     balance roundrobin
-    server \${STUDENT_ID}-web-01 \$SERVER1_IP check
-    server \${STUDENT_ID}-web-02 \$SERVER2_IP check
+    server ${STUDENT_ID}-web-01 $SERVER1_IP check
+    server ${STUDENT_ID}-web-02 $SERVER2_IP check
 EOF
 
 # Verify HAProxy configuration
 sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 
 # Restart HAProxy service
-sudo systemctl restart haproxy
+sudo service haproxy restart
