@@ -11,7 +11,7 @@ sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.real.cfg
 
 sudo cat <<EOF >> /etc/haproxy/haproxy.cfg
 
-frontend http
+frontend http_front
     bind *:80
     default_backend web-backend
 
