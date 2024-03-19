@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# a bash script that configures nginx to run as nginx user instead of root
-
-sudo adduser nginx
-sudo chown -R nginx /var/log/nginx /var/lib/nginx
-sudo sed -i s/www-data/nginx/g /etc/nginx/nginx.conf
-sudo nginx -t
+# Script that starts nginx as nginx user
+chmod 777 /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+pkill -9 apache
 su nginx -c "service nginx restart"
