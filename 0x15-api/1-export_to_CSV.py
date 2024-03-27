@@ -18,4 +18,4 @@ if __name__ == "__main__":
             writer.writerow(["{}".format(argv[1]),
                              "{}".format(user[0].get('name')),
                              "{}".format(data['completed']),
-                             "{}".format(data['tite'])])
+                             "{}".format(data['title'])])
