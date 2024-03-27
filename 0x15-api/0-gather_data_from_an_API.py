@@ -10,8 +10,8 @@ from sys import argv
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com"
     user = requests.get(f"{url}/users/{argv[1]}").json()
-    todo = requests.get(f"{url}/todos", params={'userid': argv[1]}).json()
-    comp = [t['title'] for t in todo if t['completed'] == True]
+    todo = requests.get(f"{url}/todos", params={'userId': argv[1]}).json()
+    comp = [t['title'] for t in todo if t['completed'] is True]
     print(f"Employee {user['name']} is done with tasks\
 ({len(comp)}/{len(todo)}):")
     for items in comp:
