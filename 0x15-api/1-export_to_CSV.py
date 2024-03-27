@@ -13,9 +13,9 @@ if __name__ == "__main__":
     todo = requests.get(f"{url}todos", params={"userId": argv[1]}).json()
     filename = '{}'.format(argv[1]) + '.csv'
     with open('{}'.format(filename), 'w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for data in todo:
             writer.writerow(["{}".format(argv[1]),
-                             "{}".format(user[0].get('name')),
+                             "{}".format(user[0].get('username')),
                              "{}".format(data['completed']),
                              "{}".format(data['title'])])
