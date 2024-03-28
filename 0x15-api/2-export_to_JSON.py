@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Python script to export data in the JSON format
+    -   run by ./script <user_id>
 """
 import json
 import requests
