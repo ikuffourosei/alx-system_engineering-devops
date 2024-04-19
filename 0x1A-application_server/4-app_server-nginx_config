@@ -4,7 +4,7 @@ server {
     listen [::]:80 default_server;
     root /var/www/html;
     index index.html index.htm index.nginx-debian.html;
-    server_name 18.210.19.150;
+    server_name 18.210.19.150_;
     add_header X-Served-By $hostname;
     location /hbnb_static {
         alias /data/web_static/current/;
